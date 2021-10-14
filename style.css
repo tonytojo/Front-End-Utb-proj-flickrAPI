@@ -8,10 +8,6 @@ body {
   font-size: 1.1em;
 }
 
-select {
-  font-size: 1em;
-}
-
 .center {
   display: block;
   margin-left: auto;
@@ -30,8 +26,7 @@ h1 {
   padding-top: 10px;
 }
 
-h1,
-h2 {
+h1,h2 {
   font-family: "Roboto Condensed", sans-serif;
   text-align: center;
 }
@@ -46,7 +41,6 @@ main {
 
 .container {
   display: flex;
-  justify-content: center;
   justify-content: space-between;
 }
 
@@ -73,7 +67,7 @@ li {
   justify-content: flex-end;
   align-items: center;
   background-color: lightgray;
-  border-radius: 10px;
+  border-radius: 15px;
   text-align: center;
   overflow: auto;
 }
@@ -103,6 +97,7 @@ textarea {
   border-radius: 4px;
   box-sizing: border-box;
   resize: vertical;
+  font-size: 0.9em;
 }
 
 /* Style the label to display next to the inputs */
@@ -159,10 +154,6 @@ label {
   clear: both;
 }
 
-img {
-  padding-top: 10px;
-}
-
 footer{
    padding-bottom: 10px;
    background-color: #eee;
@@ -175,9 +166,15 @@ footer p{
    background-color: lightgray;
    padding-bottom: 20px;
 }
+img {
+  padding-top: 10px;
+  border-radius: 15px;
+}
 
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 650px) {
+/* Responsive layout - when the screen is less than 650px wide, 
+   make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 650px) 
+{
   .col-25,
   .col-75,
   input[type="submit"] {

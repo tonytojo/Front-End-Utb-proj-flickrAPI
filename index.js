@@ -1,3 +1,14 @@
+//await foo();            // foo is an async function that returns a promise
+//console.log("hello");
+
+//is the exact same as
+
+//foo().then(() => {
+//  console.log("hello");
+//});
+
+
+//To prevent use of undeclared variables
 "use strict";
 
 //Initialize
@@ -55,24 +66,24 @@ const getPhotoSize = (size, idx) => {
   if (currIndex !== -1) {
     buttons[currIndex].style.backgroundColor = "#efefef";
   }
+
   buttons[idx].style.backgroundColor = "#a7a7a7";
   currIndex = idx;      //Keep the index
   lista.innerHTML = ""; //Clear the element in html
 }; // end getPhotoSize
 
 
-//Eventhandler that catch a change for cattype
-//*****************************************
+//Eventhandler that catch a change for catType
+//********************************************
 cats.addEventListener("change", (ev) => {
   catsType = ev.target.value;
   lista.innerHTML = "";
 });
 
 //Event handler that is called when you click the button GetCats
-//runPhoto.addEventListener("click", (ev) => 
 async function getPhotos() 
 {
-    //Handle pageSize
+    //Handle pageSize. Default to 10
     pageSize = $("#pageSize").val();
     if (pageSize === "" || isNaN(pageSize)) 
     {
@@ -90,8 +101,8 @@ async function getPhotos()
     {
       data.photos.photo.forEach(async photo => 
       {
-          //Fetch routine to get info about a photo
-          //***************************************
+          //Fetch routine to get info about a photo such as title and taken date  
+          //********************************************************************
           let apiInfo = `https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=${apiKey}&photo_id=${photo.id}&format=json&nojsoncallback=1`;
           let response = await fetch(apiInfo)
           let data = await response.json();
@@ -105,7 +116,6 @@ async function getPhotos()
           response = await fetch(apiGetSize)
           data = await response.json();
         
-
            //Use only those photos that have the right width
            idx = photoObj.findIndex(item => item.tag === sizeSuffix);
            let widthData =  data.sizes.size[idx].width;
@@ -132,6 +142,7 @@ async function getPhotos()
               //Get 1024px photo
               let apiPhoto1024 = `https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_b.jpg`;
               let max1024px = await fetch(apiPhoto1024) 
+
 
               //Add li element to ul element and set cursor to default
               songItem.innerHTML = `<a href="${max1024px.url}" target="_blank"> <img src=${response.url} /> ${obj.title.slice(0, photoObj[idx].width)} <br> ${obj.taken}</a>`;
