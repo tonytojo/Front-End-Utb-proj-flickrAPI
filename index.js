@@ -129,8 +129,12 @@ async function getPhotos()
               const songItem = document.createElement("li");
               songItem.style.width =  photoObj[idx].width + 20 +"px";
 
+              //Get 1024px photo
+              let apiPhoto1024 = `https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_b.jpg`;
+              let max1024px = await fetch(apiPhoto1024) 
+
               //Add li element to ul element and set cursor to default
-              songItem.innerHTML = `<img src=${response.url} /> ${obj.title.slice(0, photoObj[idx].width)} <br> ${obj.taken}`;
+              songItem.innerHTML = `<a href="${max1024px.url}" target="_blank"> <img src=${response.url} /> ${obj.title.slice(0, photoObj[idx].width)} <br> ${obj.taken}</a>`;
               lista.appendChild(songItem);
               document.body.style.cursor = 'default';
           }
