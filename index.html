@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consuming the flickr API</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Welcome to the Kattis zoo</h1>
+        <img class="center" src="bellis.jpg" alt="" />
+      </header>
+
+      <main>
+        <h2>Consume a flickr REST-API</h2>
+
+        <p class="info">
+          Select the size of photo you want to get from Flickr API
+        </p>
+
+        <div class="container">
+          <button class="button">Square 75px</button>
+          <button class="button">Square 150px</button>
+          <button class="button">Thumbnail 100px</button>
+          <button class="button">Small 240px</button>
+          <button class="button">Small 320px</button>
+          <button class="button">Small 400px</button>
+        </div>
+
+        <p>Before you can get cats you must select the size of photo you want.
+           In this app we can look at photos for our big cats animals.<br>
+        </p>
+
+         <div class="container2">
+          <form>
+            <div class="row">
+              <div class="col-25">
+                <label for="pageSize">PageSize</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="pageSize" placeholder="10">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-25">
+                <label for="name">CatType</label>
+              </div>
+              <div class="col-75">
+                <select id="cats">
+                  <option value="Huskatt">Huskatt</option>
+                  <option value="Tiger">Tiger</option>
+                  <option value="Lejon">Lejon</option>
+                  <option value="Leopard">Leopard</option>
+                  <option value="Jaguar">Jaguar</option>
+                </select>
+              </div>
+            </div>
+          
+            <div class="row">
+              <button id="btn">Get Cats</button>
+            </div>
+          </form>
+
+          <img src="tiger.jpg" alt="">
+        </div>
+      </main>
+
+      <ul id="lista"></ul>
+
+      <footer>
+        <p style="text-align: center;">Made by Tony Johansson 2021-10-12</p>
+      </footer>
+    </div>
+
+    <!-- end wrapper -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>

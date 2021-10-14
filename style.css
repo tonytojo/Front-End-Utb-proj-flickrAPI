@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
+
+body {
+  background-image: url(catpaw.png);
+  background-color: #eee;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1.1em;
+}
+
+select {
+  font-size: 1em;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+.wrapper {
+  max-width: 1040px;
+  margin: 0 auto;
+  background-color: #e3e3e3;
+}
+
+h1 {
+  font-size: 3em;
+  padding-top: 10px;
+}
+
+h1,
+h2 {
+  font-family: "Roboto Condensed", sans-serif;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+main {
+  padding: 1em;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.container > button {
+  padding: 10px;
+  text-align: center;
+  font-size: 1em;
+  margin: 5px;
+}
+
+#btn:active {
+  background: green;
+}
+
+.info {
+  color: green;
+  font-weight: bold;
+}
+
+li {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: lightgray;
+  border-radius: 10px;
+  text-align: center;
+  overflow: auto;
+}
+
+#lista > li {
+  list-style: none;
+}
+
+#lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0;
+  border-top: 1px solid #000;
+  padding-top: 5px;
+  align-items: flex-start;
+  padding-top: 10px;
+}
+
+/* Style inputs, select elements and textareas */
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Style the label to display next to the inputs */
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+/* Style the submit button */
+#btn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  margin-top: 5px;
+  font-size: 1em;
+}
+
+#btn[disabled] {
+  opacity: 0.5;
+}
+
+/* Style the container */
+.container2 {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+img {
+  padding-top: 10px;
+}
+
+footer{
+   padding-bottom: 10px;
+   background-color: #eee;
+}
+
+footer p{
+   text-align: center;
+   padding-top: 20px;
+   margin:0 10px;
+   background-color: lightgray;
+   padding-bottom: 20px;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 650px) {
+  .col-25,
+  .col-75,
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .container,
+  .container2 {
+    flex-direction: column;
+  }
+
+  body {
+    background-image: none;
+  }
+
+  .container2 {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2
+   {
+      font-size: 1.2em;
+   }
+
+   img {
+     width:100%;
+  }
+
+  .center {
+    width:100%;
+  }
+}
+
+@media screen and (max-width: 750px) 
+{
+   body {
+      background-image: none;
+    }
+}
