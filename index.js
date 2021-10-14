@@ -29,7 +29,7 @@ const photoObj = [
   { tag :"q", width:150 },
   { tag :"t", width:100},
   { tag :"m", width:240},
-  { tag :"n", widt:320},
+  { tag :"n", width:320},
   { tag :"w", width:400}
 ]
 
@@ -119,7 +119,7 @@ async function getPhotos()
            //Use only those photos that have the right width
            idx = photoObj.findIndex(item => item.tag === sizeSuffix);
            let widthData =  data.sizes.size[idx].width;
-           let widthMall =  data.sizes.size[idx].width;
+           let widthMall =  photoObj[idx].width;
 
           if (idx === 0 || idx === 1 ||
              (idx === 3 && widthData === widthMall) ||
@@ -142,7 +142,6 @@ async function getPhotos()
               //Get 1024px photo
               let apiPhoto1024 = `https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_b.jpg`;
               let max1024px = await fetch(apiPhoto1024) 
-
 
               //Add li element to ul element and set cursor to default
               songItem.innerHTML = `<a href="${max1024px.url}" target="_blank"> <img src=${response.url} /> ${obj.title.slice(0, photoObj[idx].width)} <br> ${obj.taken}</a>`;

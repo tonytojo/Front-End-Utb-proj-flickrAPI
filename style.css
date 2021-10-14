@@ -18,7 +18,7 @@ body {
 .wrapper {
   max-width: 1040px;
   margin: 0 auto;
-  background-color: #e3e3e3;
+  background-color: #d9d9d9;
 }
 
 h1 {
@@ -26,7 +26,8 @@ h1 {
   padding-top: 10px;
 }
 
-h1,h2 {
+h1,
+h2 {
   font-family: "Roboto Condensed", sans-serif;
   text-align: center;
 }
@@ -66,10 +67,11 @@ li {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  background-color: lightgray;
-  border-radius: 15px;
+  background-color: #a6a6a6;
+  border-radius: 10px;
   text-align: center;
   overflow: auto;
+  padding:0 15px;
 }
 
 #lista > li {
@@ -97,14 +99,14 @@ textarea {
   border-radius: 4px;
   box-sizing: border-box;
   resize: vertical;
-  font-size: 0.9em;
+  font-size: 0.85em;
 }
 
 /* Style the label to display next to the inputs */
 label {
   padding: 12px 12px 12px 0;
   display: inline-block;
-  margin-left: 5px;
+  padding-left: 5px;
 }
 
 /* Style the submit button */
@@ -154,27 +156,25 @@ label {
   clear: both;
 }
 
+img {
+  padding-top: 10px;
+  border-radius: 13px;
+  margin: 4px;
+}
+
 footer{
-   padding-bottom: 10px;
-   background-color: #eee;
+   background-color: #999;
 }
 
 footer p{
    text-align: center;
    padding-top: 20px;
-   margin:0 10px;
-   background-color: lightgray;
+   color: #fff;
    padding-bottom: 20px;
 }
-img {
-  padding-top: 10px;
-  border-radius: 15px;
-}
 
-/* Responsive layout - when the screen is less than 650px wide, 
-   make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 650px) 
-{
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 650px) {
   .col-25,
   .col-75,
   input[type="submit"] {
@@ -209,7 +209,7 @@ img {
   }
 
   .center {
-    width:100%;
+    width: 100%;
   }
 }
 
