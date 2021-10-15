@@ -22,6 +22,7 @@ let sizeSuffix;
 let currIndex = -1;
 let pageSize;
 let idx;
+let page=1;
 
 //Variables to handle photosize
 const photoObj = [
@@ -80,10 +81,11 @@ cats.addEventListener("change", (ev) => {
   lista.innerHTML = "";
 });
 
+
 //Event handler that is called when you click the button GetCats
-async function getPhotos() 
+async function getPhotos(page) 
 {
-    //Handle pageSize. Default to 10
+  //Handle pageSize. Default to 10
     pageSize = $("#pageSize").val();
     if (pageSize === "" || isNaN(pageSize)) 
     {
@@ -92,9 +94,10 @@ async function getPhotos()
  
     // Fetch routine to handle the initial request to flickr API
     //***********************************************************
-    const apiUrl = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=${catsType}&tag=${catsType}&per_page=${pageSize}&format=json&nojsoncallback=1`;
+    const apiUrl = `https://api.flickr.com/services/rest/?method=flickr.photos.search&page=${page}&api_key=${apiKey}&text=${catsType}&tag=${catsType}&per_page=${pageSize}&format=json&nojsoncallback=1`;
     const response = await fetch(apiUrl);
     const data = await response.json();
+    
     await walkThroughPhotos(data);
 
     async function walkThroughPhotos(data)
@@ -147,10 +150,17 @@ async function getPhotos()
               songItem.innerHTML = `<a href="${max1024px.url}" target="_blank"> <img src=${response.url} /> ${obj.title.slice(0, photoObj[idx].width)} <br> ${obj.taken}</a>`;
               lista.appendChild(songItem);
               document.body.style.cursor = 'default';
+
+              document.querySelector("#next").style.display = 'block';
           }
       });
     }
 }
+
+document.querySelector("#next").addEventListener('click', (ev) => {
+   getPhotos(page);
+})
+
 
 //This is the main engine that start the whole thing
  runPhoto.addEventListener("click", (ev) => 

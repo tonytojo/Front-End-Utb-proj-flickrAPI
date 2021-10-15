@@ -21,6 +21,13 @@ body {
   background-color: #d9d9d9;
 }
 
+#next {
+  display:none; 
+  width:100%; 
+  padding:10px;
+  background-color: lightgreen;
+}
+
 h1 {
   font-size: 3em;
   padding-top: 10px;
