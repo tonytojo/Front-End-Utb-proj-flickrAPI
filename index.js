@@ -159,6 +159,7 @@ async function getPhotos(page)
 
 document.querySelector("#next").addEventListener('click', (ev) => {
    getPhotos(page); 
+   page++;
 })
 
 
